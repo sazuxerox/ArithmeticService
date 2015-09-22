@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="ArithmeticService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="NetTcpBinding_IArithmeticService_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <msb:BinaryEncoding xmlns:msb="http://schemas.microsoft.com/ws/06/2004/mspolicy/netbinary1" />
+        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <msf:WindowsTransportSecurity xmlns:msf="http://schemas.microsoft.com/ws/2006/05/framing/policy">
+                  <msf:ProtectionLevel>EncryptAndSign</msf:ProtectionLevel>
+                </msf:WindowsTransportSecurity>
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256 />
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict />
+              </wsp:Policy>
+            </sp:Layout>
+          </wsp:Policy>
+        </sp:TransportBinding>
+        <wsaw:UsingAddressing />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="NetTcpBinding_IModuloService_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <msb:BinaryEncoding xmlns:msb="http://schemas.microsoft.com/ws/06/2004/mspolicy/netbinary1" />
+        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <msf:WindowsTransportSecurity xmlns:msf="http://schemas.microsoft.com/ws/2006/05/framing/policy">
+                  <msf:ProtectionLevel>EncryptAndSign</msf:ProtectionLevel>
+                </msf:WindowsTransportSecurity>
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256 />
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict />
+              </wsp:Policy>
+            </sp:Layout>
+          </wsp:Policy>
+        </sp:TransportBinding>
+        <wsaw:UsingAddressing />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:8080/?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:8080/?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IArithmeticService_Addition_InputMessage">
+    <wsdl:part name="parameters" element="tns:Addition" />
+  </wsdl:message>
+  <wsdl:message name="IArithmeticService_Addition_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AdditionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IArithmeticService_Subtraction_InputMessage">
+    <wsdl:part name="parameters" element="tns:Subtraction" />
+  </wsdl:message>
+  <wsdl:message name="IArithmeticService_Subtraction_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SubtractionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IArithmeticService_Multiplication_InputMessage">
+    <wsdl:part name="parameters" element="tns:Multiplication" />
+  </wsdl:message>
+  <wsdl:message name="IArithmeticService_Multiplication_OutputMessage">
+    <wsdl:part name="parameters" element="tns:MultiplicationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IArithmeticService_Division_InputMessage">
+    <wsdl:part name="parameters" element="tns:Division" />
+  </wsdl:message>
+  <wsdl:message name="IArithmeticService_Division_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DivisionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IModuloService_Modulo_InputMessage">
+    <wsdl:part name="parameters" element="tns:Modulo" />
+  </wsdl:message>
+  <wsdl:message name="IModuloService_Modulo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ModuloResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IArithmeticService">
+    <wsdl:operation name="Addition">
+      <wsdl:input wsaw:Action="http://tempuri.org/IArithmeticService/Addition" message="tns:IArithmeticService_Addition_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IArithmeticService/AdditionResponse" message="tns:IArithmeticService_Addition_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Subtraction">
+      <wsdl:input wsaw:Action="http://tempuri.org/IArithmeticService/Subtraction" message="tns:IArithmeticService_Subtraction_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IArithmeticService/SubtractionResponse" message="tns:IArithmeticService_Subtraction_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Multiplication">
+      <wsdl:input wsaw:Action="http://tempuri.org/IArithmeticService/Multiplication" message="tns:IArithmeticService_Multiplication_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IArithmeticService/MultiplicationResponse" message="tns:IArithmeticService_Multiplication_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Division">
+      <wsdl:input wsaw:Action="http://tempuri.org/IArithmeticService/Division" message="tns:IArithmeticService_Division_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IArithmeticService/DivisionResponse" message="tns:IArithmeticService_Division_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="IModuloService">
+    <wsdl:operation name="Modulo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IModuloService/Modulo" message="tns:IModuloService_Modulo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IModuloService/ModuloResponse" message="tns:IModuloService_Modulo_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IArithmeticService" type="tns:IArithmeticService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Addition">
+      <soap:operation soapAction="http://tempuri.org/IArithmeticService/Addition" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Subtraction">
+      <soap:operation soapAction="http://tempuri.org/IArithmeticService/Subtraction" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Multiplication">
+      <soap:operation soapAction="http://tempuri.org/IArithmeticService/Multiplication" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Division">
+      <soap:operation soapAction="http://tempuri.org/IArithmeticService/Division" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="BasicHttpBinding_IModuloService" type="tns:IModuloService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Modulo">
+      <soap:operation soapAction="http://tempuri.org/IModuloService/Modulo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="NetTcpBinding_IArithmeticService" type="tns:IArithmeticService">
+    <wsp:PolicyReference URI="#NetTcpBinding_IArithmeticService_policy" />
+    <soap12:binding transport="http://schemas.microsoft.com/soap/tcp" />
+    <wsdl:operation name="Addition">
+      <soap12:operation soapAction="http://tempuri.org/IArithmeticService/Addition" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Subtraction">
+      <soap12:operation soapAction="http://tempuri.org/IArithmeticService/Subtraction" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Multiplication">
+      <soap12:operation soapAction="http://tempuri.org/IArithmeticService/Multiplication" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Division">
+      <soap12:operation soapAction="http://tempuri.org/IArithmeticService/Division" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="NetTcpBinding_IModuloService" type="tns:IModuloService">
+    <wsp:PolicyReference URI="#NetTcpBinding_IModuloService_policy" />
+    <soap12:binding transport="http://schemas.microsoft.com/soap/tcp" />
+    <wsdl:operation name="Modulo">
+      <soap12:operation soapAction="http://tempuri.org/IModuloService/Modulo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ArithmeticService">
+    <wsdl:port name="BasicHttpBinding_IArithmeticService" binding="tns:BasicHttpBinding_IArithmeticService">
+      <soap:address location="http://localhost:8080/ArithmeticService" />
+    </wsdl:port>
+    <wsdl:port name="BasicHttpBinding_IModuloService" binding="tns:BasicHttpBinding_IModuloService">
+      <soap:address location="http://localhost:8080/ArithmeticService" />
+    </wsdl:port>
+    <wsdl:port name="NetTcpBinding_IArithmeticService" binding="tns:NetTcpBinding_IArithmeticService">
+      <soap12:address location="net.tcp://localhost:8090/ArithmeticService" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>net.tcp://localhost:8090/ArithmeticService</wsa10:Address>
+        <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
+          <Upn>Sazzad\sazu</Upn>
+        </Identity>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+    <wsdl:port name="NetTcpBinding_IModuloService" binding="tns:NetTcpBinding_IModuloService">
+      <soap12:address location="net.tcp://localhost:8090/ArithmeticService" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>net.tcp://localhost:8090/ArithmeticService</wsa10:Address>
+        <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
+          <Upn>Sazzad\sazu</Upn>
+        </Identity>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

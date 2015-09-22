@@ -1,0 +1,8 @@
+E:\Works\Code\WCF\ArithmeticService\ArithmeticServiceHost\bin\Debug\ArithmeticServiceHost.exe.config
+E:\Works\Code\WCF\ArithmeticService\ArithmeticServiceHost\bin\Debug\ArithmeticServiceHost.exe
+E:\Works\Code\WCF\ArithmeticService\ArithmeticServiceHost\bin\Debug\ArithmeticServiceHost.pdb
+E:\Works\Code\WCF\ArithmeticService\ArithmeticServiceHost\bin\Debug\ArithmeticService.dll
+E:\Works\Code\WCF\ArithmeticService\ArithmeticServiceHost\bin\Debug\ArithmeticService.pdb
+E:\Works\Code\WCF\ArithmeticService\ArithmeticServiceHost\obj\Debug\ArithmeticServiceHost.csprojResolveAssemblyReference.cache
+E:\Works\Code\WCF\ArithmeticService\ArithmeticServiceHost\obj\Debug\ArithmeticServiceHost.exe
+E:\Works\Code\WCF\ArithmeticService\ArithmeticServiceHost\obj\Debug\ArithmeticServiceHost.pdb

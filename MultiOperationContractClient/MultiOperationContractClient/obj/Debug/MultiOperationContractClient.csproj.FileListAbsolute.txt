@@ -1,0 +1,9 @@
+E:\Works\Code\WCF\MultiOperationContractClient\MultiOperationContractClient\bin\Debug\MultiOperationContractClient.exe.config
+E:\Works\Code\WCF\MultiOperationContractClient\MultiOperationContractClient\obj\Debug\MultiOperationContractClient.csprojResolveAssemblyReference.cache
+E:\Works\Code\WCF\MultiOperationContractClient\MultiOperationContractClient\obj\Debug\MultiOperationContractClient.Form1.resources
+E:\Works\Code\WCF\MultiOperationContractClient\MultiOperationContractClient\obj\Debug\MultiOperationContractClient.Properties.Resources.resources
+E:\Works\Code\WCF\MultiOperationContractClient\MultiOperationContractClient\obj\Debug\MultiOperationContractClient.csproj.GenerateResource.Cache
+E:\Works\Code\WCF\MultiOperationContractClient\MultiOperationContractClient\bin\Debug\MultiOperationContractClient.exe
+E:\Works\Code\WCF\MultiOperationContractClient\MultiOperationContractClient\bin\Debug\MultiOperationContractClient.pdb
+E:\Works\Code\WCF\MultiOperationContractClient\MultiOperationContractClient\obj\Debug\MultiOperationContractClient.exe
+E:\Works\Code\WCF\MultiOperationContractClient\MultiOperationContractClient\obj\Debug\MultiOperationContractClient.pdb
